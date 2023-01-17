@@ -8,6 +8,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Pet } from './pets/pet.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { OwnersModule } from './owners/owners.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ConfigModule } from '@nestjs/config';
       synchronize: true,
     }),
     PetsModule,
+    OwnersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
